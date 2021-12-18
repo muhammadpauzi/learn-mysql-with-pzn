@@ -1,3 +1,4 @@
+-- PRIMARY KEY FOR UNIQUE COLUMN LIKE (id);
 CREATE TABLE products(
     id          VARCHAR(10) NOT NULL,
     name        VARCHAR(100) NOT NULL,
