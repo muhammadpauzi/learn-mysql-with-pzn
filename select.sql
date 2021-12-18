@@ -15,3 +15,6 @@ WHERE id = 'P0001';
 
 SELECT * FROM products
 WHERE name = 'mie ayam bakso';
+
+-- DISTINCT
+SELECT DISTINCT category FROM products;
