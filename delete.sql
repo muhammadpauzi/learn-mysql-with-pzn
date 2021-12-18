@@ -1,0 +1,3 @@
+-- DELETE DATA/ROW
+DELETE FROM products
+WHERE id = 'P0018';
