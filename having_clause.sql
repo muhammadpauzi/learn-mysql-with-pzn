@@ -1,0 +1,6 @@
+-- HAVING INSTEAD OF WHERE CLAUSE IF USING AGGRAGATE
+SELECT category,
+    COUNT(id) AS Total
+FROM products 
+GROUP BY category
+HAVING Total > 8;
