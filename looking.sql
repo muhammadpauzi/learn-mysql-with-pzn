@@ -40,3 +40,23 @@ SELECT * FROM products WHERE id = 'P0002' FOR UPDATE; -- #2
 SELECT * FROM products WHERE id = 'P0001' FOR UPDATE; -- #4
 
 COMMIT;
+
+-- LOOK TABLE
+LOCK TABLES products READ;
+
+SELECT * FROM products;
+UPDATE products
+SET quantity = 100
+WHERE id = 'P0001';
+
+UNLOCK TABLES;
+
+-- WRITE
+LOCK TABLES products WRITE;
+
+SELECT * FROM products;
+UPDATE products
+SET quantity = 100
+WHERE id = 'P0001';
+
+UNLOCK TABLES;
