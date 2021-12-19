@@ -1,0 +1,30 @@
+START TRANSACTION;
+
+-- QUERY NUMBER #1
+UPDATE guestbooks
+SET title = CONCAT(title, " (updated)")
+WHERE id = 10;
+
+-- RUN THIS QUERY IN OTHER APP/TERMINAL/MYSQL CLIENT
+UPDATE guestbooks
+SET title = CONCAT(title, " (updated) 2")
+WHERE id = 10;
+
+-- AND THEN RUN THIS QUERY MYSQL CLIENT 'QUERY NUMBER #1'
+COMMIT;
+
+-- MANUAL LOOKING RECORD
+START TRANSACTION;
+
+SELECT * FROM products WHERE id = 'P0001' FOR UPDATE;
+UPDATE products
+SET quantity = quantity - 10
+WHERE id = 'P0001';
+
+-- RUN THIS QUERY IN OTHER APP/TERMINAL/MYSQL CLIENT
+SELECT * FROM products WHERE id = 'P0001' FOR UPDATE;
+UPDATE products
+SET quantity = quantity - 10
+WHERE id = 'P0001';
+
+COMMIT;
